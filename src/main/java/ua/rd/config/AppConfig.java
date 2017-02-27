@@ -1,10 +1,8 @@
 package ua.rd.config;
 
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import ua.rd.bean.Client;
-import ua.rd.bean.ConsoleEventLogger;
+import ua.rd.bean.*;
 
 @Configuration
 public class AppConfig {
@@ -19,9 +17,26 @@ public class AppConfig {
     }
 
     @Bean
-    public Application app() {
-        return new Application(client(), consoleEventLogger());
+    public Application application() {
+        //return new Application(client(), consoleEventLogger());
+        return new Application();
     }
 
+    @Bean
+    public Order order() {
+        return new Order();
+    }
+
+    @Bean
+    Service clientService() {
+        Service s = new ClientService();
+        return s;
+    }
+
+    @Bean
+    Service adminService() {
+        Service s = new AdminService();
+        return s;
+    }
 }
 

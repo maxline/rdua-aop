@@ -16,4 +16,8 @@
         <constructor-arg ref="client"/>
         <constructor-arg ref="eventLogger"/>
     </bean>
+
+    <!--Если расскомментировать то в классе Order не сработает квалификатор @Qualifier("adminService")
+    private Service service;-->
+    <!--<bean id="order" class="ua.rd.bean.Order" autowire="byType"/>-->
 </beans>

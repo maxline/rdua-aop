@@ -4,6 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import ua.rd.bean.Client;
 import ua.rd.bean.ConsoleEventLogger;
+import ua.rd.bean.Order;
 
 public class App {
     private Client client;
@@ -30,6 +31,11 @@ public class App {
 
         app.logEvent("Hello 1");
         app.logEvent("Hello 2");
+
+
+        Order order = (Order) ctx.getBean("order");
+        order.printOrder();
+
     }
 
     private void logEvent(String msg) {
