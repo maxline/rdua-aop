@@ -9,7 +9,7 @@ public class Order {
     private Client client;
 
     @Autowired
-    @Qualifier("adminService")
+    @Qualifier("clientService")
     private Service service;
 
 

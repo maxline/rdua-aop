@@ -2,9 +2,11 @@ package ua.rd.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import ua.rd.bean.*;
 
 @Configuration
+@Import(AuthConfig.class)
 public class AppConfig {
     @Bean
     public Client client() {
