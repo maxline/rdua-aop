@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+ 		http://www.springframework.org/schema/beans
+ 		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <bean id="listService" class="ua.rd.map.ListService">
+        <constructor-arg>
+            <map>
+                <entry key="1" value="#{{'11','111'}}"/>
+                <entry key="2" value="#{{'22','222'}}"/>
+                <entry key="3">
+                    <list>
+                        <value>33</value>
+                        <value>333</value>
+                    </list>
+                </entry>
+                <entry key="a" value="['aaa',dd 'bbb']"/>
+            </map>
+        </constructor-arg>
+<!--\        <constructor-arg>-->
+        <!--<map>-->
+            <!--<entry key="1" value="11"/>-->
+            <!--<entry key="2" value="22"/>-->
+            <!--<entry key="3" value="33"/>-->
+        <!--</map>-->
+    <!--</constructor-arg>-->
+
+        <!--<constructor-arg>-->
+            <!--<list>-->
+                <!--<value>"2"</value>-->
+                <!--<value>"2"</value>-->
+                <!--<value>"2"</value>-->
+            <!--</list>-->
+        <!--</constructor-arg>-->
+
+        <!--<property name="list">-->
+            <!--<list>-->
+                <!--<value>"1"</value>-->
+                <!--<value>"7"</value>-->
+                <!--<value>"3"</value>-->
+            <!--</list>-->
+        <!--</property>-->
+    </bean>
+
+    <bean id="eventLogger" class="ua.rd.bean.ConsoleEventLogger"/>
+
+    <bean id="appMap" class="ua.rd.map.AppMap">
+        <constructor-arg ref="listService"/>
+    </bean>
+</beans>
